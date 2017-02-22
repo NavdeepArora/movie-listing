@@ -1,0 +1,26 @@
+{
+  "name": "simility-movie-listing",
+  "description": "movie listing app",
+  "main": "index.js",
+  "authors": [
+    "Navdeep Arora"
+  ],
+  "license": "ISC",
+  "homepage": "./app/index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-route": "^1.6.2",
+    "angular-ui-router": "^0.4.2",
+    "angular-resource": "^1.6.2",
+    "angular-bootstrap": "^2.5.0",
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Simility Movie Listing</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+
+
+        <script src="../bower_components/angular/angular.min.js"></script>
+        <script src="../bower_components/angular-route/angular-route.min.js"></script>       
+        <script src="../bower_components/angular-resource/angular-resource.min.js"></script>         
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+        <link href="/component/movie-list/assets/style.css" rel="stylesheet">
+
+        <!-- Scripts of MLC Application -->
+        <script src="movie-listing-app.js"></script>
+        <script src="/component/movie-list/movie-list-module.js"></script>
+        <script src="/component/movie-list/controller/movie-list-controller.js"></script>
+        <script src="/component/movie-list/service/movie-list-service.js"></script>
+        <script src="/component/movie-list/view-model/movie-list-view-model.js"></script>
+        <script src="/component/movie-list/proxy/movie-list-proxy.js"></script>
+        <script src="/component/movie-list/filters/search-filter.js"></script>
+        <script src="/component/movie-list/filters/sort-by-budget-filter.js"></script>
+        <script src="/component/movie-list/filters/sort-by-year-filter.js"></script>
+
+
+
+    </head>
+    <body id="mlapp" >
+        <div class="header">
+            <p>SIMILITY<span class="leadingText"> - Movie Listing</span></p>
+        </div>
+        <!-- APPLICATION CONTENT -->
+        <div class="contentBody">
+            <div class="contentWrapper">
+                <div data-ui-view="">
+                </div>
+            </div>
+        </div>
+    </body>  
+
+</html>
