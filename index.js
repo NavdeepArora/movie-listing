@@ -10,15 +10,13 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 
 
-/*var moviesListingMockPipe = function (req, res) {
+var moviesListingMockPipe = function (req, res) {
 
     var apiUrl, newUrl;
     var requestUrl = req.url;
 
     apiUrl = 'http://starlord.hackerearth.com';
 
-
-    console.log(req.headers);
 
     newUrl = apiUrl + requestUrl;
 
@@ -29,11 +27,9 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
     } catch (err) {
         console.log(err);
     }
-};*/
-/* app.get('/simility/*', function (req, res) {
-    request('http://starlord.hackerearth.com' + req.url).pipe(res);
-});*/
-//app.get('/simility/*', moviesListingMockPipe);
+};
+
+app.get('/simility/*', moviesListingMockPipe);
 
 
 app.listen(8080);
