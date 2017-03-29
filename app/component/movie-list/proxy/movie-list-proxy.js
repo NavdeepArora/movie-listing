@@ -7,7 +7,7 @@ movieList.service('MovieListProxy', [
     function MovieListProxyFn($http, $q) {
         this.http = $http;
         this.q = $q;
-        this.serviceUrl = 'http://starlord.hackerearth.com/simility/movieslisting';
+        this.serviceUrl = '/simility/movieslisting';
     };
 
     MovieListProxyFn.prototype.getMovieList = function () {
