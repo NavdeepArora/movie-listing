@@ -9,5 +9,4 @@ movieList.service('MovieListService', [
 
     MovieListServiceFn.prototype.getMovieList = function () {
         return this.movieListProxy.getMovieList();
-
     };

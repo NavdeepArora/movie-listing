@@ -176,3 +176,9 @@ p img {
 .page-nav-bar {
 	text-align: center;
 }
+
+#mlapp .auto-complete-absolute-container {
+	position: absolute;
+	background-color: black;
+	color: white;
+}

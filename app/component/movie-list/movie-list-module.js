@@ -1,1 +1,1 @@
-var movieList = angular.module('movie-list', []);
+var movieList = angular.module('movie-list', ['autoCompleteModule']);

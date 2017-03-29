@@ -28,10 +28,11 @@ similityMovieListingApp.config([
             }
         });
 
-}]).run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams){
-    $rootScope.$state = $state;
-    $rootScope.$stateParams = $stateParams;
-    $state.go('sml-web.movieListing');
+}]).run(['$state', 'MovieListService', 'MovieListViewModel', function($state, MovieListService, MovieListViewModel){
+    MovieListService.getMovieList().then (function (response) {
+        MovieListViewModel.movieList = response.data;
+        $state.go('sml-web.movieListing');
+    });
 }]);
 
 angular.element(document).ready(function (){
