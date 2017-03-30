@@ -25,14 +25,19 @@ similityMovieListingApp.config([
                     controller: 'MovieListController',
                     controllerAs: 'MLC'
                 }
+            },
+            resolve: {
+                UserSelectionData: ['MovieListService', 'MovieListViewModel', function (MovieListService, MovieListViewModel) {
+                    MovieListService.getMovieList().then (function (response) {
+                        MovieListViewModel.movieList = response.data;
+                        MovieListViewModel.showTemplate = true;
+                    });
+                }]
             }
         });
 
 }]).run(['$state', 'MovieListService', 'MovieListViewModel', function($state, MovieListService, MovieListViewModel){
-    MovieListService.getMovieList().then (function (response) {
-        MovieListViewModel.movieList = response.data;
-        $state.go('sml-web.movieListing');
-    });
+    $state.go('sml-web.movieListing');
 }]);
 
 angular.element(document).ready(function (){

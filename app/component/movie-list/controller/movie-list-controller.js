@@ -10,24 +10,16 @@ function MovieListCtrlFn($filter, MovieListService, MovieListViewModel){
     this.movieListService = MovieListService;
     this.movieListViewModel = MovieListViewModel;
     this.page = 1;
-    this.resetDisplayList();
     this.searchArray = [];
     this.autoCompleteOptions = {};
     this.setSearchArray();
-    this.setAutoCompleteOptions();
 };
-
-/*MovieListCtrlFn.prototype.getMovieList = function () {
-    var self = this;
-    this.movieListService.getMovieList().then (function (response) {
-        self.movieListViewModel.movieList = response.data;
-        self.resetDisplayList();
-    });
-};*/
 
 MovieListCtrlFn.prototype.setSearchArray = function () {
     var self = this;
     this.searchArray = _.chain(self.movieListViewModel.movieList).map(function(item) { return item.movie_title }).uniq().value();
+    this.setAutoCompleteOptions();
+    this.resetDisplayList();
 };
 
 MovieListCtrlFn.prototype.setAutoCompleteOptions = function () {
@@ -36,14 +28,10 @@ MovieListCtrlFn.prototype.setAutoCompleteOptions = function () {
         minimumChars: 1,
         dropdownWidth: '50%',
         data: function (term) {
-            console.log('hi');
             term = term.toUpperCase();
             var match = _.filter(self.searchArray, function (value) {
-                console.log(value, term);
                 return value.toUpperCase().startsWith(term);
             });
-            console.log('match', match);
-            //return _.pluck(match, 'name');
             return match;
         }
     }

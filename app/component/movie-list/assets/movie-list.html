@@ -1,5 +1,5 @@
-<div class="results">
-	<div class="bar">
+<div ng-if="MLC.movieListViewModel.showTemplate" class="results">
+	<div ng-init="MLC.setSearchArray()" class="bar">
 		<input type="text" ng-model="MLC.searchString" placeholder="Search (By Name OR Genre)" ng-change="MLC.searchitems()" auto-complete="MLC.autoCompleteOptions"/>
 	</div>
 	<ul>
